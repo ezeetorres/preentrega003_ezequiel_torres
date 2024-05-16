@@ -5,20 +5,14 @@
 }
 
 body {
-  background-image: url(/images/fondo2.jpg);
+  background-image: url(./images/fondo2.jpg);
   height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
 
-.link {
-  margin: 10px;
-  padding: 10px;
-  border: 2px solid #000;
-}
-
-.img {
+.link, .img {
   margin: 10px;
   padding: 10px;
   border: 2px solid #000;
@@ -31,38 +25,25 @@ body {
   font-style: normal;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 0 0 2px #1b088a;
+  text-shadow: 0 0 2px #8A2BE2;
   border: 3px solid #000000;
   border-radius: 25% 10%;
   background-color: rgba(250, 250, 250, 0.418);
 }
 
-.title {
+.title, .subtitle, .parrafo, .parrafo-1 {
   text-align: center;
   font-family: cursive;
-  font-size: 24px;
-  text-transform: uppercase;
-  text-shadow: 0 0 5px #000;
 }
 
 .subtitle {
-  text-align: center;
-  font-family: cursive;
   font-weight: bold;
   font-size: 24px;
 }
 
-.parrafo {
-  font-family: cursive;
+.parrafo, .parrafo-1 {
   font-weight: bold;
   font-size: 15px;
-}
-
-.parrafo-1 {
-  font-family: cursive;
-  font-weight: bold;
-  font-size: 15px;
-  text-align: center;
 }
 
 .container {
@@ -75,7 +56,6 @@ body {
 
 .galery {
   padding: 15px;
-  background-color: none;
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr;
@@ -96,39 +76,39 @@ body {
 }
 
 .item1 {
-  background-image: url(/images/mojito.jpg);
+  background-image: url(./images/mojito.jpg);
 }
 
 .item2 {
-  background-image: url(/images/margarita.jpg);
+  background-image: url(./images/margarita.jpg);
 }
 
 .item3 {
-  background-image: url(/images/daiquiri.jpg);
+  background-image: url(./images/daiquiri.jpg);
 }
 
 .item4 {
-  background-image: url(/images/martini.jpg);
+  background-image: url(./images/martini.jpg);
 }
 
 .item5 {
-  background-image: url(/images/old\ fashioned.jpg);
+  background-image: url(./images/old\ fashioned.jpg);
 }
 
 .item6 {
-  background-image: url(/images/manhattan.jpg);
+  background-image: url(./images/manhattan.jpg);
 }
 
 .item7 {
-  background-image: url(/images/chuy-sunrise.jpg);
+  background-image: url(./images/chuy-sunrise.jpg);
 }
 
 .item8 {
-  background-image: url(/images/banana.jpg);
+  background-image: url(./images/banana.jpg);
 }
 
 .item9 {
-  background-image: url(/images/mint.jpg);
+  background-image: url(./images/mint.jpg);
 }
 
 @media only screen and (min-width: 480px) {
@@ -209,15 +189,18 @@ body {
     grid-row: 2/3;
   }
 }
-.cocktail {
-  padding: 15px;
-  margin: 15px;
-  border: 2px solid #000;
-}
-
 .formulario {
   text-align: center;
   border: 2px solid #000;
+  margin: 100px;
+}
+
+.checkbox {
+  background-color: #B666D2;
+}
+
+.checkbox input[type=checkbox] {
+  margin-right: 5px;
 }
 
 .reserve-1 {
@@ -229,30 +212,6 @@ body {
   border-bottom: 2px solid #000;
   line-height: 0.1em;
   margin: 20px 0;
-}
-
-.checkbox {
-  background-color: rgba(27, 8, 138, 0.5137254902);
-}
-
-@media only screen and (max-width: 480px) {
-  .formulario {
-    margin: 10px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .formulario {
-    margin: 50px;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .formulario {
-    margin: 100px;
-  }
-}
-.box2 {
-  background-color: rgba(7, 3, 250, 0.363);
-  border: 1px solid #000;
 }
 
 .map {
@@ -275,22 +234,20 @@ body {
   position: relative;
   margin: 50px auto;
   animation: agitar 0.5s ease infinite alternate;
-  background-image: url(/images/coctelera.png);
+  background-image: url(./images/coctelera.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.parte-superior,
-.parte-inferior {
+.parte-superior, .parte-inferior {
   width: 100%;
   height: 10px;
   background-color: silver;
   position: absolute;
 }
 
-.parte-superior,
-.parte-inferior {
+.parte-superior, .parte-inferior {
   display: none;
 }
 
