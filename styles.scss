@@ -4,12 +4,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 // Variables
 $color-principal: #87CEFA;
 $color-secundario: #B666D2;
 $color-terciario: #8A2BE2;
 $color-negro: #000;
+$titulo-font: "Anton", sans-serif;
 
 // Estilos generales
 body {
@@ -20,11 +23,15 @@ body {
     background-size: cover;
 }
 
-.link, .img {
-    margin: 10px;
-    padding: 10px;
-    border: 2px solid #000;
+
+.divisor {
+    border-bottom: 2px solid #000;
+    line-height: 0.1em;
+    margin: 20px 0;
 }
+
+
+// Estilos de texto
 
 .title-1 {
     font-family: "Anton", sans-serif;
@@ -34,33 +41,95 @@ body {
     text-align: center;
     text-transform: uppercase;
     text-shadow: 0 0 2px $color-terciario;
-    border: 3px solid #000000;
-    border-radius: 25% 10%;
-    background-color: rgba(250, 250, 250, 0.418);
+
 }
 
-.title, .subtitle, .parrafo, .parrafo-1 {
+.parrafo{
     text-align: center;
     font-family: cursive;
+    font-size: 15px; 
+    font-weight: bold
 }
 
+    .parrafo-1{
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    text-shadow: 0 0 1px $color-principal;
+    text-align: center;
+
+}
+
+
+
 .subtitle {
+    text-align: center;
+    font-family: cursive;
     font-weight: bold;
     font-size: 24px;
 }
 
-.parrafo, .parrafo-1 {
-    font-weight: bold;
-    font-size: 15px;
+
+// Estilos página de inicio
+
+.portada {
+    background-image: url(./images/img1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    align-items: center;
+
 }
+
+.contenido-portada {
+    text-align: center;
+    align-items: center;
+
+    h1{
+        font-family: $titulo-font;
+    font-size: 50px;
+    color: $color-principal;
+    text-shadow: 0 0 5px $color-secundario;
+    }
+    p{
+        font-family: cursive;
+        font-size: 40px;
+        color: $color-secundario;
+    
+    }
+
+
+}
+
+
+.enlace {
+
+border: 1px solid $color-secundario;
+border-radius: 8px;
+background-color: #87cefa34;
+text-decoration: none;
+color: $color-secundario;
+
+
+}
+
+
 
 .container {
     border: 1px solid #000;
+    justify-content: center;
 }
 
 .col {
     padding-left: 0;
 }
+
+// Estilos pagina tragos
 
 // Galería de imágenes
 .galery {
@@ -84,34 +153,12 @@ body {
     transform: scale(1.03);
 }
 
-.item1{
-    background-image: url(./images/mojito.jpg);
-
-}
-.item2{
-    background-image: url(./images/margarita.jpg);
-}
-.item3{
-    background-image: url(./images/daiquiri.jpg);
-}
-.item4{
-    background-image: url(./images/martini.jpg);
-}
-.item5{
-    background-image: url(./images/old\ fashioned.jpg);
-}
-.item6{
-    background-image: url(./images/manhattan.jpg);
-}
-.item7{
-    background-image: url(./images/chuy-sunrise.jpg);
-}
-.item8{
-    background-image: url(./images/banana.jpg);
+@for $i from 1 to 10 {
+    .item#{$i} {
+        background-image: url(./images/b#{$i}.jpg);
     }
-.item9{
-    background-image: url(./images/mint.jpg);
-} 
+}
+
 
 @media only screen and (min-width: 480px) {
     .galery {
@@ -210,6 +257,7 @@ body {
 }
 
 // Estilos para el formulario
+
 .formulario {
     text-align: center;
     border: 2px solid #000;
@@ -229,29 +277,12 @@ body {
     margin: 100px;
 }
 
-.divisor {
-    border-bottom: 2px solid #000;
-    line-height: 0.1em;
-    margin: 20px 0;
-}
 
-.map {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-}
-
-.map iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+// Animación
 
 .coctelera {
-    width: 100px;
-    height: 150px;
+    width: 70px;
+    height: 120px;
     position: relative;
     margin: 50px auto;
     animation: agitar 0.5s ease infinite alternate;
@@ -279,4 +310,71 @@ body {
     100% {
         transform: rotate(-5deg);
     }
+}
+
+// Mixin
+@mixin grayscale{
+    filter: grayscale(100%);
+}
+
+@mixin sepia{
+    filter: sepia(100%);
+}
+
+// Galeria de eventos
+.contenedor-2{
+    min-height: 600px;
+    width: 100%;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 200px);
+}
+
+.item-2{
+    border: 2px solid #000;
+    background-image: url(./images/a1.jpg);
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.9s;
+}
+.item-2:hover{
+    background-size: 125%;
+}
+
+
+@for $i from 1 through 3 {
+    .item-2-#{$i} {
+        background-color: lighten($color-principal, $i * 10%);
+        background-image: url(./images/a#{$i}.jpg);
+        background-position: center;
+        @include grayscale;
+    }
+}
+
+@for $i from 4 through 6 {
+    .item-2-#{$i} {
+        background-color: lighten($color-secundario, $i * 10%);
+        background-image: url(./images/a#{$i}.jpg);
+        @include sepia;
+    }
+}
+
+
+@for $i from 7 through 9 {
+    .item-2-#{$i} {
+        background-color: lighten($color-terciario, $i * 7%);
+        background-image: url(./images/a#{$i}.jpg);
+        @include grayscale;
+    }
+}
+
+// Footer
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
 }
